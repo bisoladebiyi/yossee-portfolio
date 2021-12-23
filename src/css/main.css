@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap");
+body, .App, #root, html, .container {
+  height: 100%;
+}
+
+* {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #1A374D;
+}
+
+body {
+  background-color: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+h3 {
+  font-size: 30px;
+  margin-bottom: 50px;
+}
+
+button {
+  padding: 10px 12px;
+  border-radius: 17px;
+  border: none;
+  background: #6798a3;
+  border: 1px solid #6798a3;
+  color: #fff;
+  margin-top: 80px;
+  cursor: pointer;
+  transition: all ease-in-out 0.3s;
+}
+button:hover {
+  background: #fff;
+  border: 1px solid #6798a3;
+  color: #6798a3;
+}
+
+.navbar {
+  width: 100%;
+  position: fixed;
+  background: #fff;
+  box-shadow: 7px 2px 8px 0px rgba(208, 208, 208, 0.172);
+}
+.navbar .nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 40px;
+  align-items: center;
+}
+.navbar .nav p {
+  font-size: 35px;
+  font-family: cinzel decorative;
+  font-weight: 700;
+  color: #6798a3;
+}
+.navbar .nav ul {
+  display: flex;
+  text-transform: capitalize;
+  width: 23%;
+  justify-content: space-between;
+  font-size: 13px;
+}
+.navbar .nav ul li {
+  position: relative;
+}
+.navbar .nav ul li::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  border-radius: 3px;
+  background-color: #6798a3;
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  transition: width 0.2s ease-in-out;
+}
+.navbar .nav ul li:hover::after {
+  width: 100%;
+}
+
+.header {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+.header-content {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  justify-content: space-between;
+  padding-top: 40px;
+}
+.header-content div {
+  width: 50%;
+}
+.header-content div p:first-child {
+  font-size: 17px;
+  margin-bottom: 20px;
+}
+.header-content div p:nth-child(2) {
+  font-size: 50px;
+  margin-bottom: 15px;
+}
+.header-content div p:nth-child(2) span {
+  font-weight: 600;
+  color: #6798a3;
+}
+.header-content figure {
+  width: 46%;
+}
+.header-content figure img {
+  width: 100%;
+}
+
+.works {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+.works div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 60px;
+}
+.works div figure {
+  width: 100%;
+  height: 300px;
+  box-shadow: 0px 2px 8px 0px rgba(208, 208, 208, 0.385);
+}
+.works div figure img {
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+}
+
+.about {
+  width: 80%;
+  margin: 200px auto 0;
+  text-align: center;
+}
+.about-content {
+  display: flex;
+  align-items: center;
+  width: 90%;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+.about-content figure {
+  width: 40%;
+  height: 500px;
+}
+.about-content figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 100px;
+}
+.about-content div {
+  width: 50%;
+  font-size: 25px;
+}
+.about-content div p {
+  text-align: left;
+}
+.about-content div p:nth-child(2) {
+  font-size: 15px;
+  color: #6798a3;
+  margin-top: 40px;
+}
+.about-content div button {
+  margin-top: 30px;
+}
+
+.footer {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 150px;
+  font-size: 11px;
+  color: #6798a3;
+}
+
+/*# sourceMappingURL=main.css.map */
