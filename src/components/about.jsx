@@ -1,21 +1,20 @@
 import React from "react";
-import image from "../images/Remini20210718120431905 1.png";
+import { Link } from "react-router-dom";
+
 
 const About = () => {
   return (
     <div className="about">
       <h3>ABOUT</h3>
       <div className="about-content">
-        <figure>
-          <img src={image} alt="" />
-        </figure>
+        <div className="img"></div>
         <div>
           <p>
             My name is Adetimilehin Adeyosola Adejumoke.<br/><br/>I am a Nigerian and
             an entry level UX designer.
           </p>
-          <p>Like to know more about me?</p>
-          <button>See more</button>
+          <p>Like to know more about me?😉</p>
+          <Link to="/about"><button>See more</button></Link>
         </div>
       </div>
     </div>
