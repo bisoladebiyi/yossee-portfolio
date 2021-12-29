@@ -9,7 +9,7 @@ const Works = () => {
     <div>
       <div className="work-page">
         <h3>MY WORKS</h3>
-        <div>
+        <div className="work-grid">
           <figure>
             <img src={work1} alt="" />
           </figure>

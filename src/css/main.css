@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Sen:wght@400;700;800&display=swap");
 body, .App, #root, html, .container {
   height: 100%;
+  position: relative;
 }
 
 * {
@@ -13,6 +14,7 @@ body, .App, #root, html, .container {
 body {
   font-family: Sen;
   background-image: url("../images/photo1640267230.jpeg");
+  overflow-x: hidden;
 }
 
 a {
@@ -63,6 +65,7 @@ button:hover {
   position: fixed;
   background: #f8f8f8;
   box-shadow: 7px 2px 8px 0px rgba(208, 208, 208, 0.172);
+  z-index: 999;
 }
 .navbar .nav {
   display: flex;
@@ -240,34 +243,112 @@ button:hover {
   width: 80%;
   margin: 0 auto;
   text-align: center;
+  overflow-x: hidden;
 }
-.works div {
+@media (max-width: 800px) {
+  .works {
+    width: 90%;
+  }
+}
+.works .controls {
+  width: 38%;
+  justify-content: space-between;
+  margin: 20px auto 0;
+  align-items: center;
+  display: none;
+}
+@media (max-width: 600px) {
+  .works .controls {
+    display: flex;
+  }
+}
+.works .controls button {
+  margin: 0;
+  border: none;
+  background: none;
+  padding: 0;
+}
+.works .controls button svg {
+  width: 13px;
+}
+.works .controls button svg circle {
+  fill: #6798a3ad;
+}
+.works .controls button .arrows {
+  width: 25px;
+}
+.works .work-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 60px;
 }
-@media (max-width: 800px) {
-  .works div {
+@media (max-width: 600px) {
+  .works .work-grid {
     display: block;
   }
 }
-.works div figure {
+.works .work-grid figure {
   width: 100%;
   height: 300px;
   box-shadow: 0px 2px 8px 0px rgba(208, 208, 208, 0.385);
   transition: box-shadow 0.2s ease-in-out;
+  position: relative;
+  cursor: pointer;
+  margin-left: 0;
+  transition: 1s;
 }
-.works div figure img {
+.works .work-grid figure::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: none;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  transition: background 0.3s ease-in-out;
+}
+.works .work-grid figure:hover::after {
+  background: #6798a38a;
+}
+.works .work-grid figure img {
   width: 100%;
   object-fit: cover;
   height: 100%;
 }
-.works div figure:hover {
+.works .work-grid figure:hover {
   box-shadow: 0px 2px 8px 0px rgba(208, 208, 208, 0.933);
 }
 @media (max-width: 800px) {
-  .works div figure:not(:last-child) {
+  .works .work-grid figure:not(:last-child) {
     margin-bottom: 30px;
+  }
+}
+@media (max-width: 600px) {
+  .works {
+    width: 80%;
+  }
+  .works .work-grid {
+    display: flex;
+    width: 500%;
+    grid-gap: 0;
+    align-items: center;
+  }
+  .works .work-grid figure {
+    width: 20%;
+    box-shadow: none;
+  }
+  .works .work-grid figure:not(:last-child) {
+    margin-bottom: 0;
+  }
+  .works .work-grid figure img {
+    width: 90%;
+    box-shadow: 0px 2px 8px 0px rgba(208, 208, 208, 0.385);
+  }
+  .works .more-projects {
+    display: none;
   }
 }
 
@@ -405,32 +486,52 @@ button:hover {
   padding-top: 150px;
   margin: 0 auto;
 }
-.work-page div {
+.work-page .work-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 60px;
 }
-@media (max-width: 800px) {
-  .work-page div {
+@media (max-width: 600px) {
+  .work-page .work-grid {
     display: block;
   }
 }
-.work-page div figure {
+.work-page .work-grid figure {
   width: 100%;
   height: 300px;
   box-shadow: 0px 2px 8px 0px rgba(208, 208, 208, 0.385);
   transition: box-shadow 0.2s ease-in-out;
+  position: relative;
+  cursor: pointer;
+  margin-left: 0;
+  transition: 1s;
 }
-.work-page div figure img {
+.work-page .work-grid figure::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: none;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  transition: background 0.3s ease-in-out;
+}
+.work-page .work-grid figure:hover::after {
+  background: #6798a38a;
+}
+.work-page .work-grid figure img {
   width: 100%;
   object-fit: cover;
   height: 100%;
 }
-.work-page div figure:hover {
+.work-page .work-grid figure:hover {
   box-shadow: 0px 2px 8px 0px rgba(208, 208, 208, 0.933);
 }
 @media (max-width: 800px) {
-  .work-page div figure:not(:last-child) {
+  .work-page .work-grid figure:not(:last-child) {
     margin-bottom: 30px;
   }
 }
@@ -634,6 +735,45 @@ button:hover {
   background: #fff;
   border: 1px solid #6798a3;
   color: #6798a3;
+}
+
+.side-menu {
+  width: 100%;
+  height: 100%;
+  background: #f8f8f8;
+  position: fixed;
+  top: 0;
+  right: -900px;
+  transition: right 0.3s ease-in-out;
+  place-items: center;
+  display: none;
+  z-index: 9999;
+}
+@media (max-width: 600px) {
+  .side-menu {
+    display: grid;
+  }
+}
+.side-menu button {
+  position: absolute;
+  right: 10px;
+  top: 15px;
+  margin-top: 0;
+  background: none;
+  border: none;
+}
+.side-menu button img {
+  width: 35px;
+}
+.side-menu ul {
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.side-menu ul li {
+  text-transform: uppercase;
 }
 
 /*# sourceMappingURL=main.css.map */

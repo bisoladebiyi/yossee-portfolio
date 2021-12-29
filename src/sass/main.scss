@@ -6,6 +6,7 @@ $page-width: 80%;
 
 body, .App, #root, html, .container{
     height: 100%;
+    position: relative;
 }
 
 *{
@@ -17,6 +18,7 @@ body, .App, #root, html, .container{
 body{
     font-family: Sen;
     background-image: url("../images/photo1640267230.jpeg");
+    overflow-x: hidden;
 }
 a{
     text-decoration: none;
@@ -35,6 +37,7 @@ button{
     position: fixed;
     background: rgb(248, 248, 248);
     box-shadow: 7px 2px 8px 0px rgba(208, 208, 208, 0.172);
+    z-index: 999;
     .nav{
         display: flex;
         justify-content: space-between;
@@ -180,7 +183,58 @@ button{
     width: $page-width;
     margin: 0 auto;
     text-align: center;
+    overflow-x: hidden;
+    @include respond(tab-land){
+        width: 90%;
+    }
+
+    .controls{
+        width: 38%;
+        justify-content: space-between;
+        margin: 20px auto 0;
+        align-items: center;
+        display: none;
+        @include respond(tab-port) {
+            display: flex;
+        }
+        button{
+            @include removeBtnStyle;
+            svg{
+                width: 13px;
+                circle{
+                    fill: #6798a3ad;
+                }
+            }
+            .arrows{
+                width: 25px
+            }
+        }       
+    }
     @include workLayout;
+    @include respond(tab-port){
+        width: 80%;
+        .work-grid{
+            display: flex;
+            width: 500%;
+            grid-gap: 0;
+            align-items: center;
+            figure{
+                width: 20%;
+                box-shadow: none;
+                &:not(:last-child){
+                    margin-bottom: 0;
+                }
+                img{
+                    width: 90%;
+                    box-shadow: 0px 2px 8px 0px rgba(208, 208, 208, 0.385);
+                }
+                
+            }
+        }
+        .more-projects{
+            display: none;
+        }
+    }
   
 }
 
@@ -448,4 +502,47 @@ button{
         }
        
     }
+}
+
+
+// side menu 
+.side-menu{
+    width: 100%;
+    height: 100%;
+    background: rgb(248, 248, 248);
+    position: fixed;
+    top: 0;
+    right: -900px;
+    transition: right .3s ease-in-out;
+    
+    place-items: center;
+    display: none;
+    z-index: 9999;
+    @include respond(tab-port){
+        display: grid;
+    }
+    button{
+        position: absolute;
+        right: 10px;
+        top: 15px;
+        margin-top: 0;
+        background: none;
+        border: none;
+        img{
+            width: 35px;
+        }
+    }
+    ul{
+        height: 30%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        li{
+            text-transform: uppercase;
+        }
+    }
+
+ 
+    
 }
