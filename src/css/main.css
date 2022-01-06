@@ -245,38 +245,6 @@ button:hover {
   text-align: center;
   overflow-x: hidden;
 }
-@media (max-width: 800px) {
-  .works {
-    width: 90%;
-  }
-}
-.works .controls {
-  width: 38%;
-  justify-content: space-between;
-  margin: 20px auto 0;
-  align-items: center;
-  display: none;
-}
-@media (max-width: 600px) {
-  .works .controls {
-    display: flex;
-  }
-}
-.works .controls button {
-  margin: 0;
-  border: none;
-  background: none;
-  padding: 0;
-}
-.works .controls button svg {
-  width: 13px;
-}
-.works .controls button svg circle {
-  fill: #6798a3ad;
-}
-.works .controls button .arrows {
-  width: 25px;
-}
 .works .work-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -326,25 +294,101 @@ button:hover {
     margin-bottom: 30px;
   }
 }
+.works .see-more-slide {
+  display: none;
+  place-items: center;
+  display: none;
+}
+.works .see-more-slide .see-more {
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: width 0.2s ease-in-out;
+}
+.works .see-more-slide .see-more:hover {
+  width: 105px;
+}
+.works .see-more-slide .see-more svg {
+  width: 20px;
+}
+@media (max-width: 600px) {
+  .works .see-more-slide {
+    display: grid;
+  }
+}
+@media (max-width: 800px) {
+  .works {
+    width: 90%;
+  }
+}
+.works .controls {
+  width: 40%;
+  justify-content: space-between;
+  margin: 20px auto 0;
+  align-items: center;
+  display: none;
+}
+@media (max-width: 600px) {
+  .works .controls {
+    display: flex;
+  }
+}
+@media (max-width: 400px) {
+  .works .controls {
+    width: 50%;
+  }
+}
+.works .controls button {
+  margin: 0;
+  border: none;
+  background: none;
+  padding: 0;
+  opacity: 0.7;
+}
+.works .controls button.active {
+  opacity: 1;
+}
+.works .controls button svg {
+  width: 13px;
+}
+.works .controls button svg circle {
+  fill: #6798a3e2;
+}
+@media (max-width: 400px) {
+  .works .controls button svg {
+    width: 10px;
+  }
+}
+.works .controls button .arrows {
+  width: 25px;
+}
+@media (max-width: 400px) {
+  .works .controls button .arrows {
+    width: 20px;
+  }
+}
 @media (max-width: 600px) {
   .works {
     width: 80%;
   }
   .works .work-grid {
-    display: flex;
-    width: 500%;
+    display: grid;
+    grid-template-columns: repeat(5, 100%);
+    overflow: hidden;
+    scroll-behavior: smooth;
     grid-gap: 0;
-    align-items: center;
   }
   .works .work-grid figure {
-    width: 20%;
+    width: 100%;
     box-shadow: none;
   }
   .works .work-grid figure:not(:last-child) {
     margin-bottom: 0;
   }
   .works .work-grid figure img {
-    width: 90%;
+    width: 95%;
     box-shadow: 0px 2px 8px 0px rgba(208, 208, 208, 0.385);
   }
   .works .more-projects {
