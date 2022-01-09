@@ -6,6 +6,7 @@ import './css/main.css';
 import AboutPage from './pages/about-page';
 import Home from './pages/home';
 import SideMenu from './components/side-menu';
+import smoothscroll from 'smoothscroll-polyfill';
 
 
 function App() {
@@ -34,4 +35,5 @@ function App() {
   );
 }
 
+smoothscroll.polyfill();
 export default App;

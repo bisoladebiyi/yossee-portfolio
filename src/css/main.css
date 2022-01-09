@@ -243,7 +243,7 @@ button:hover {
   width: 80%;
   margin: 0 auto;
   text-align: center;
-  overflow-x: hidden;
+  position: relative;
 }
 .works .work-grid {
   display: grid;
@@ -318,60 +318,56 @@ button:hover {
     display: grid;
   }
 }
+.works .prev, .works .next {
+  display: none;
+  margin: 0;
+  border: none;
+  background: none;
+  padding: 0;
+}
+@media (max-width: 600px) {
+  .works .prev, .works .next {
+    display: flex;
+    position: absolute;
+    top: 50%;
+  }
+  .works .prev .arrows, .works .next .arrows {
+    width: 55px;
+  }
+}
+@media (max-width: 400px) {
+  .works .prev .arrows, .works .next .arrows {
+    width: 45px;
+  }
+}
+.works .prev {
+  left: 0px;
+}
+@media (max-width: 400px) {
+  .works .prev {
+    left: -5px;
+  }
+}
+.works .next {
+  right: 0px;
+}
+@media (max-width: 400px) {
+  .works .next {
+    right: -5px;
+  }
+}
 @media (max-width: 800px) {
   .works {
     width: 90%;
   }
 }
-.works .controls {
-  width: 40%;
-  justify-content: space-between;
-  margin: 20px auto 0;
-  align-items: center;
-  display: none;
-}
-@media (max-width: 600px) {
-  .works .controls {
-    display: flex;
-  }
-}
-@media (max-width: 400px) {
-  .works .controls {
-    width: 50%;
-  }
-}
-.works .controls button {
-  margin: 0;
-  border: none;
-  background: none;
-  padding: 0;
-  opacity: 0.7;
-}
-.works .controls button.active {
-  opacity: 1;
-}
-.works .controls button svg {
-  width: 13px;
-}
-.works .controls button svg circle {
-  fill: #6798a3e2;
-}
-@media (max-width: 400px) {
-  .works .controls button svg {
-    width: 10px;
-  }
-}
-.works .controls button .arrows {
-  width: 25px;
-}
-@media (max-width: 400px) {
-  .works .controls button .arrows {
-    width: 20px;
-  }
-}
 @media (max-width: 600px) {
   .works {
+    width: 100%;
+  }
+  .works .grid-container {
     width: 80%;
+    margin: 0 auto;
   }
   .works .work-grid {
     display: grid;

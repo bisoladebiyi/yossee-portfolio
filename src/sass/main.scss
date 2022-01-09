@@ -183,7 +183,7 @@ button{
     width: $page-width;
     margin: 0 auto;
     text-align: center;
-    overflow-x: hidden;
+    position: relative;
     @include workLayout;
     .see-more-slide{
         display: none;
@@ -207,48 +207,46 @@ button{
             display: grid;
         }
     }
+    .prev, .next{
+        display: none;
+       @include removeBtnStyle;
+        @include respond(tab-port){
+            display: flex;
+            position: absolute;
+            top:50%;
+            .arrows{
+                width: 55px;
+            }
+        }
+        @include respond(mobile){
+            .arrows{
+                width: 45px;
+            }
+        }
+    }
+    .prev{
+        left: 0px;
+        @include respond(mobile){
+            left:-5px
+        }
+    }
+    .next{
+        right: 0px;
+        @include respond(mobile){
+            right:-5px
+        }
+
+    }
     @include respond(tab-land){
         width: 90%;
     }
-
-    .controls{
-        width: 40%;
-        justify-content: space-between;
-        margin: 20px auto 0;
-        align-items: center;
-        display: none;
-        @include respond(tab-port) {
-            display: flex;
-        }
-        @include respond(mobile) {
-            width: 50%;
-        }
-        button{
-            @include removeBtnStyle;
-            opacity: .7;
-            &.active {
-                opacity: 1;
-            }
-            svg{
-                width: 13px;
-                circle{
-                    fill: #6798a3e2;
-                }
-                @include respond(mobile) {
-                    width: 10px;
-                }
-            }
-            .arrows{
-                width: 25px;
-                @include respond(mobile) {
-                    width: 20px;
-                }
-            }
-        }       
-    }
   
     @include respond(tab-port){
-        width: 80%;
+        width: 100%;
+        .grid-container{
+            width: 80%;
+            margin: 0 auto;
+        }
         .work-grid{
             display: grid;
             grid-template-columns: repeat(5,100%) ;

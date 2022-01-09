@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import image from "../images/Remini20210718120431905 1.png";
 import img from '../images/dot.svg'
 import Footer from "../components/footer";
 
 const AboutPage = () => {
+
+  const ref = useRef()
+  useEffect(()=> {
+   ref?.current.scrollIntoView({ scrollBehavior : "smooth"})
+  },[])
   return (
-    <div>
+    <div ref={ref}>
       <div className="about-page">
         <h3>ABOUT</h3>
         <div className="about-page-header">
