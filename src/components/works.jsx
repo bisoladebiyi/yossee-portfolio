@@ -6,12 +6,11 @@ import work3 from "../images/work3.png";
 
 const Works = () => {
   let currentSlide = 0;
-
   window.addEventListener("resize", () => {
     const slider = document.querySelector(".work-grid");
-    slider.style["scroll-behavior"] = "auto";
+    slider.scroll({behavior: "auto"})
     moveSlide(currentSlide);
-    slider.style["scroll-behavior"] = "smooth";
+    slider.scroll({behavior: "smooth"})
   });
 
   const moveSlide = (nextSlide) => {

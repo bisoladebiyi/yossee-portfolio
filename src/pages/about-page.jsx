@@ -7,7 +7,7 @@ const AboutPage = () => {
 
   const ref = useRef()
   useEffect(()=> {
-   ref?.current.scrollIntoView({ scrollBehavior : "smooth"})
+   ref.current.scrollIntoView({ behavior : "smooth"})
   },[])
   return (
     <div ref={ref}>

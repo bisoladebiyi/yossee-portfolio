@@ -7,7 +7,7 @@ import Works from '../components/works'
 const Home = () => {
     const ref = useRef()
     useEffect(()=> {
-     ref?.current.scrollIntoView({ scrollBehavior : "smooth"})
+     ref.current.scrollIntoView({ behavior : "smooth"})
     },[])
     
     return (
