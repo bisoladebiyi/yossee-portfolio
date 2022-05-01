@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import Footer from "../components/footer";
-import work1 from "../images/work1.png";
-import work2 from "../images/work2.png";
-import work3 from "../images/work3.png";
+import work1 from "../images/omega.png";
+import work2 from "../images/landing.png";
 
 const Works = () => {
   const ref = useRef()
@@ -14,18 +14,12 @@ const Works = () => {
       <div className="work-page">
         <h3>MY WORKS</h3>
         <div className="work-grid">
-          <figure>
+          <Link to={"/omega-bakery"}><figure>
             <img src={work1} alt="" />
-          </figure>
-          <figure>
+          </figure></Link>
+          <Link to="/innovation-landing"><figure>
             <img src={work2} alt="" />
-          </figure>
-          <figure>
-            <img src={work2} alt="" />
-          </figure>
-          <figure>
-            <img src={work3} alt="" />
-          </figure>
+          </figure></Link>
         </div>
       </div>
       <Footer />

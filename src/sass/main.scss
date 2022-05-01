@@ -1,583 +1,720 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Sen:wght@400;700;800&display=swap');
-@import './abstracts/mixins'; 
+@import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Sen:wght@400;700;800&display=swap");
+@import "./abstracts/mixins";
 
 $color-primary: #6798a3;
 $page-width: 80%;
 
-body, .App, #root, html, .container{
-    height: 100%;
-    position: relative;
+body,
+.App,
+#root,
+html,
+.container {
+  height: 100%;
+  position: relative;
 }
 
-*{
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    color: #1A374D;
+* {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #1a374d;
 }
-body{
-    font-family: Sen;
-    background-image: url("../images/photo1640267230.jpeg");
-    overflow-x: hidden;
+body {
+  font-family: Sen;
+  background: #fff;
+  overflow-x: hidden;
 }
-a{
-    text-decoration: none;
-    color: #000;
+a {
+  text-decoration: none;
+  color: #000;
 }
-h3{
+h3 {
   @include headingStyle;
 }
 
-
-button{
-    @include btnStyle;
+button {
+  @include btnStyle;
 }
-.navbar{
-    width: 100%;
-    position: fixed;
-    background: rgb(248, 248, 248);
-    box-shadow: 7px 2px 8px 0px rgba(208, 208, 208, 0.172);
-    z-index: 999;
-    .nav{
-        display: flex;
-        justify-content: space-between;
-        padding: 10px 40px;
-        align-items: center;
-        @include respond(tab-port){
-            padding: 10px 30px;
-        }
-        @include respond(mobile){
-            padding: 8px 20px;
-        }
-        p{
-            font-size: 35px;
-            font-family: cinzel decorative;
-            font-weight: 700;
-            color: $color-primary;
-            @include respond(mobile){
-                font-size: 32px;
-            }
-        }
-        ul{
-            display: flex;
-            text-transform: capitalize;
-            width: 23%;
-            justify-content: space-between;
-            font-size: 13px;
-            @include respond(desktop){
-                width: 28%;
-            }
-            @include respond(tab-land){
-                width: 40%;
-            }
-            @include respond(tab-port){
-                display: none;
-            }
-            li{
-                position: relative;
-                &::after{
-                    content: "";
-                    width: 0;
-                    height: 2px;
-                    border-radius: 3px;
-                    background-color: $color-primary;
-                    position: absolute;
-                    bottom: -3px;
-                    left: 0;
-                    transition: width .2s ease-in-out;
-                }
-                &:hover::after{
-                    width: 100%;
-                }
-            }
-        }
-        .menu{
-
-            border: none;
-            padding: 0;
-            background: none;
-            display: none;
-            margin: 0;
-            @include respond(tab-port){
-                display: block;
-            }
-            img{
-               width:35px;
-               @include respond(mobile){
-                   width: 25px;
-               }
-            }
-        }
+.navbar {
+  width: 100%;
+  position: fixed;
+  background: #fff;
+  box-shadow: 7px 2px 8px 0px rgba(208, 208, 208, 0.172);
+  z-index: 999;
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 40px;
+    align-items: center;
+    @include respond(tab-port) {
+      padding: 10px 30px;
     }
+    @include respond(mobile) {
+      padding: 8px 20px;
+    }
+    p {
+      font-size: 35px;
+      font-family: cinzel decorative;
+      font-weight: 700;
+      color: $color-primary;
+      @include respond(mobile) {
+        font-size: 32px;
+      }
+    }
+    ul {
+      display: flex;
+      text-transform: capitalize;
+      width: 23%;
+      justify-content: space-between;
+      font-size: 13px;
+      @include respond(desktop) {
+        width: 28%;
+      }
+      @include respond(tab-land) {
+        width: 40%;
+      }
+      @include respond(tab-port) {
+        display: none;
+      }
+      li {
+        position: relative;
+        &::after {
+          content: "";
+          width: 0;
+          height: 2px;
+          border-radius: 3px;
+          background-color: $color-primary;
+          position: absolute;
+          bottom: -3px;
+          left: 0;
+          transition: width 0.2s ease-in-out;
+        }
+        &:hover::after {
+          width: 100%;
+        }
+      }
+    }
+    .menu {
+      border: none;
+      padding: 0;
+      background: none;
+      display: none;
+      margin: 0;
+      @include respond(tab-port) {
+        display: block;
+      }
+      img {
+        width: 35px;
+        @include respond(mobile) {
+          width: 25px;
+        }
+      }
+    }
+  }
 }
 
-.header{
-    width: 100%;
-    height: 100%;
-    display: grid;
-    place-items: center;
-    &-content{
-        display: flex;
-        align-items: center;
-        width: $page-width;
-        justify-content: space-between;
-        padding-top: 40px;
-        @include respond(tab-land){
-            width: 85%;
-        }
-        @include respond(mobile){
-            width: 90%;
-        }
-        div{
-            width: 50%;
-            @include respond(tab-port){
-                width: 70%;
-            }
-            @include respond(mobile){
-                width: 100%;
-            }
-            p:first-child{
-                font-size: 17px;
-                margin-bottom: 20px;
-            }
-            p:nth-child(2){
-                font-size: 50px;
-                margin-bottom: 15px;
-                @include respond(desktop){
-                   font-size: 40px;
-                }
-                @include respond(tab-port){
-                    font-size: 45px;
-                }
-                @include respond(mobile){
-                    font-size: 40px;
-                }
-                span{
-                    font-weight: 600;
-                    color: $color-primary;
-                    @include respond(mobile){
-                        width: 100%;
-
-                    }
-                }
-            }
-        }
-        figure{
-            width: 46%;
-            @include respond(desktop){
-               width: 50%;
-             }
-             @include respond(tab-port){
-                display: none;
-            }
-            img{
-                width: 100%;
-            }
-
-        }
-
+.header {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  &-content {
+    display: flex;
+    align-items: center;
+    width: $page-width;
+    justify-content: space-between;
+    padding-top: 40px;
+    @include respond(tab-land) {
+      width: 85%;
     }
+    @include respond(mobile) {
+      width: 90%;
+    }
+    div {
+      width: 50%;
+      @include respond(tab-port) {
+        width: 70%;
+      }
+      @include respond(mobile) {
+        width: 100%;
+      }
+      p:first-child {
+        font-size: 17px;
+        margin-bottom: 20px;
+      }
+      p:nth-child(2) {
+        font-size: 50px;
+        margin-bottom: 15px;
+        @include respond(desktop) {
+          font-size: 40px;
+        }
+        @include respond(tab-port) {
+          font-size: 45px;
+        }
+        @include respond(mobile) {
+          font-size: 40px;
+        }
+        span {
+          font-weight: 600;
+          color: $color-primary;
+          @include respond(mobile) {
+            width: 100%;
+          }
+        }
+      }
+    }
+    figure {
+      width: 46%;
+      @include respond(desktop) {
+        width: 50%;
+      }
+      @include respond(tab-port) {
+        display: none;
+      }
+      img {
+        width: 100%;
+      }
+    }
+  }
 }
 
 .works {
-    width: $page-width;
-    margin: 0 auto;
-    text-align: center;
-    position: relative;
-    @include workLayout;
-    .see-more-slide{
-        display: none;
-        place-items: center;
-        display: none;
-        .see-more{
-            width: 100px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            cursor: pointer;
-            transition: width .2s ease-in-out;
-            &:hover{
-                width: 105px;
-            }
-            svg{
-                width: 20px;
-            }
-        }
-        @include respond(tab-port){
-            display: grid;
-        }
-    }
-    .prev, .next{
-        display: none;
-       @include removeBtnStyle;
-        @include respond(tab-port){
-            display: flex;
-            position: absolute;
-            top:50%;
-            .arrows{
-                width: 55px;
-            }
-        }
-        @include respond(mobile){
-            .arrows{
-                width: 45px;
-            }
-        }
-    }
-    .prev{
-        left: 0px;
-        @include respond(mobile){
-            left:-5px
-        }
-    }
-    .next{
-        right: 0px;
-        @include respond(mobile){
-            right:-5px
-        }
-
-    }
-    @include respond(tab-land){
-        width: 90%;
-    }
-    @include respond(tab-port){
-        width: 100%;
-        .grid-container{
-            width: 80%;
-            margin: 0 auto;
-        }
-        .work-grid{
-            display: grid;
-            grid-template-columns: repeat(5,100%) ;
-            overflow: hidden;
-            scroll-behavior: smooth;
-            grid-gap: 0;
-            figure{
-                width: 100%;
-                box-shadow: none;
-                &:not(:last-child){
-                    margin-bottom: 0;
-                }
-                img{
-                    width: 95%;
-                    box-shadow: 0px 2px 8px 0px rgba(208, 208, 208, 0.385);
-                }
-                
-            }
-            
-        }
-        .more-projects{
-            display: none;
-        }
-    }
-  
-}
-
-
-.about{
-    width: $page-width;
-    margin: 200px auto 0;
-    text-align: center;
-    @include respond(tab-land){
-        width: 85%;
-    }
-    &-content{
-        display: flex;
-        align-items: center;
-        width: 90%;
-        justify-content: space-between;
-        margin: 0 auto;
-        @include respond(desktop){
-            width: 100%;
-        }
-        @include respond(tab-port){
-            flex-direction: column;
-        }
-         
-        .img{
-            width: 350px;
-            height: 350px;
-            background-image: url("../images/Remini20210718120431905\ 1.png");
-            border-radius: 50%;
-            background-repeat: no-repeat;
-            background-size: cover;
-            @include respond(desktop){
-                width: 300px;
-            height: 300px;
-             }
-             @include respond(tab-land){
-                 width: 250px;
-                 height: 250px;
-             }
-        }
-        div{
-            width: 50%;
-            font-size: 25px;
-            @include respond(desktop){
-                font-size: 20px;
-                width: 45%;
-            }
-            @include respond(tab-land){
-                font-size: 18px;
-            }
-            &:last-child{
-                @include respond(tab-port){
-                width: 100%;
-                margin-top: 50px;
-            }
-        }
-            p{
-                text-align: left;
-                @include respond(mobile){
-                    text-align: center;
-                }
-            }
-            p:nth-child(2){
-                font-size: 15px;
-                color: $color-primary;
-                margin-top: 40px;
-                @include respond(desktop){
-                    font-size: 13px;
-                }
-                @include respond(tab-port){
-                    text-align: center;
-                }
-            }
-            button{
-                margin-top: 30px;
-            }
-         }
-    }
-}
-
-.footer{
-    width: 100%;
-    height: 100px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 150px;
-    font-size: 11px;
-    p{
-        color: $color-primary;
-    }
-   
-    .socials{
-        width: 15%;
-        display: flex;
-        align-items: center;
-        margin: 0 auto 20px;
-        justify-content: space-between;
-        img{
-            width: 20px;
-        }
-        @include respond(tab-port){
-          width: 30%;
-        }
-        @include respond(mobile){
-            width: 40%;
-          }
-        
-    }
-}
-
-// my works page 
-.work-page{
-    width: $page-width;
-    padding-top: 150px;
-    margin: 0 auto;
-    @include workLayout;
-    @include respond(mobile){
-        width: 90%;
-        padding-top: 100px;
-    }
-    
-}
-// about page 
-.about-page{
-    padding-top: 150px;
-    width: $page-width;
-    margin: 0 auto;
-    @include respond(tab-land){
-        width: 85%;
-    }
-    @include respond(mobile){
-        width: 90%;
-        padding-top: 100px;
-    }
-    h3{
-        margin-bottom: 20px;
-    }
-    &-header{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        @include respond(tab-port){
-            flex-direction: column-reverse;
-        }
-        div{
-            width: 60%;
-            @include respond(desktop){
-                width: 50%;
-            }
-            @include respond(tab-land){
-                width: 45%;
-            }
-            @include respond(tab-port){
-                width: 90%;
-            }
-            @include respond(mobile){
-                width: 100%;
-            }
-            p{
-                font-size: 20px;
-                color: #585e63;
-                line-height: 30px;
-                @include respond(desktop){
-                    font-size: 17px;
-                }
-                @include respond(tab-land){
-                    font-size: 15px;
-                    line-height: 25px;
-                }
-            }
-        }
-        img{
-            width: 30%;
-            object-fit: cover;
-            height: 400px;
-            border-radius: 100px;
-            @include respond(desktop){
-                width: 40%;
-            }
-            @include respond(tab-land){
-                width: 50%;
-            }
-            @include respond(tab-port){
-                width: 90%;
-                margin-top: 30px;
-            }
-            @include respond(mobile){
-                width: 100%;
-            }
-        }
-     
-    }
-    .education-expertise{
-        margin: 150px auto;
-        width: 80%;
-        display: flex;
-        justify-content: space-between;
-        @include respond(desktop){
-            width: 100%;
-        }
-        @include respond(tab-port){
-           margin: 120px auto;
-        }
-        @include respond(mobile){
-            flex-direction: column;
-        }
-        h4{
-            margin-bottom: 10px;
-            font-size: 20px;
-            @include respond(tab-port){
-                font-size: 17px;
-            }
-        }
-        div{
-            &:first-child{
-                @include respond(tab-land){
-                    width: 55%;
-                }
-                @include respond(mobile){
-                    width: 100%;
-                    margin-bottom: 20px;
-                }
-            }       
-        }
-        li{
-            font-size: 16px;
-            margin-bottom: 10px;
-            display: flex;
-            @include respond(tab-port){
-                font-size: 14px;
-            }
-            img{
-                width: 10px;
-                margin-right: 5px;
-            }
-            a{
-                font-size: 13px;
-                color: $color-primary;
-                text-decoration: underline;
-                margin-left: 5px;
-            }
-        }
-    }
-    .get-in-touch{
-        text-align: center;
-        margin-top: 100px;
-        h3{
-            margin-bottom: 10px;
-        }
-        p{
-            @include respond(tab-port){
-               font-size: 14px
-            }
-        }
-       a{
-        @include btnStyle;
-            border-radius: 5px;
-            font-size: 13px;
-            display: inline-block;
-            margin-top: 30px;
-
-           
-        }
-       
-    }
-}
-
-
-// side menu 
-.side-menu{
-    width: 100%;
-    height: 100%;
-    background: rgb(248, 248, 248);
-    position: fixed;
-    top: 0;
-    right: -900px;
-    transition: right .3s ease-in-out;
-    
+  width: $page-width;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  @include workLayout;
+  .see-more-slide {
+    display: none;
     place-items: center;
     display: none;
-    z-index: 9999;
-    @include respond(tab-port){
-        display: grid;
+    .see-more {
+      width: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      transition: width 0.2s ease-in-out;
+      &:hover {
+        width: 105px;
+      }
+      svg {
+        width: 20px;
+      }
     }
-    button{
-        position: absolute;
-        right: 10px;
-        top: 15px;
-        margin-top: 0;
-        background: none;
-        border: none;
-        img{
-            width: 35px;
-        }
+    @include respond(tab-port) {
+      display: grid;
     }
-    ul{
-        height: 30%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        li{
-            text-transform: uppercase;
+  }
+  .prev,
+  .next {
+    display: none;
+    @include removeBtnStyle;
+    @include respond(tab-port) {
+      display: flex;
+      position: absolute;
+      top: 50%;
+      .arrows {
+        width: 55px;
+      }
+    }
+    @include respond(mobile) {
+      .arrows {
+        width: 45px;
+      }
+    }
+  }
+  .prev {
+    left: 0px;
+    @include respond(mobile) {
+      left: -5px;
+    }
+  }
+  .next {
+    right: 0px;
+    @include respond(mobile) {
+      right: -5px;
+    }
+  }
+  @include respond(tab-land) {
+    width: 90%;
+  }
+  @include respond(tab-port) {
+    width: 100%;
+    .grid-container {
+      width: 80%;
+      margin: 0 auto;
+    }
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 100%);
+      overflow: hidden;
+      scroll-behavior: smooth;
+      grid-gap: 0;
+      figure {
+        width: 100%;
+        box-shadow: none;
+        &:not(:last-child) {
+          margin-bottom: 0;
         }
+        img {
+          width: 95%;
+          box-shadow: 0px 2px 8px 0px rgba(208, 208, 208, 0.385);
+        }
+      }
+    }
+    .more-projects {
+      display: none;
+    }
+  }
+}
+
+.about {
+  width: $page-width;
+  margin: 200px auto 0;
+  text-align: center;
+  @include respond(tab-land) {
+    width: 85%;
+  }
+  &-content {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    justify-content: space-between;
+    margin: 0 auto;
+    @include respond(desktop) {
+      width: 100%;
+    }
+    @include respond(tab-port) {
+      flex-direction: column;
     }
 
- 
-    
+    .img {
+      width: 350px;
+      height: 350px;
+      background-image: url("../images/Remini20210718120431905\ 1.png");
+      border-radius: 50%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      @include respond(desktop) {
+        width: 300px;
+        height: 300px;
+      }
+      @include respond(tab-land) {
+        width: 250px;
+        height: 250px;
+      }
+    }
+    div {
+      width: 50%;
+      font-size: 25px;
+      @include respond(desktop) {
+        font-size: 20px;
+        width: 45%;
+      }
+      @include respond(tab-land) {
+        font-size: 18px;
+      }
+      &:last-child {
+        @include respond(tab-port) {
+          width: 100%;
+          margin-top: 50px;
+        }
+      }
+      p {
+        text-align: left;
+        @include respond(mobile) {
+          text-align: center;
+        }
+      }
+      p:nth-child(2) {
+        font-size: 15px;
+        color: $color-primary;
+        margin-top: 40px;
+        @include respond(desktop) {
+          font-size: 13px;
+        }
+        @include respond(tab-port) {
+          text-align: center;
+        }
+      }
+      button {
+        margin-top: 30px;
+      }
+    }
+  }
 }
+
+.footer {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 150px;
+  font-size: 11px;
+  p {
+    color: $color-primary;
+  }
+
+  .socials {
+    width: 15%;
+    display: flex;
+    align-items: center;
+    margin: 0 auto 20px;
+    justify-content: space-between;
+    img {
+      width: 20px;
+    }
+    @include respond(tab-port) {
+      width: 30%;
+    }
+    @include respond(mobile) {
+      width: 40%;
+    }
+  }
+}
+
+// my works page
+.work-page {
+  width: $page-width;
+  padding-top: 150px;
+  margin: 0 auto;
+  @include workLayout;
+  @include respond(mobile) {
+    width: 90%;
+    padding-top: 100px;
+  }
+}
+// about page
+.about-page {
+  padding-top: 150px;
+  width: $page-width;
+  margin: 0 auto;
+  @include respond(tab-land) {
+    width: 85%;
+  }
+  @include respond(mobile) {
+    width: 90%;
+    padding-top: 100px;
+  }
+  h3 {
+    margin-bottom: 20px;
+  }
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include respond(tab-port) {
+      flex-direction: column-reverse;
+    }
+    div {
+      width: 60%;
+      @include respond(desktop) {
+        width: 50%;
+      }
+      @include respond(tab-land) {
+        width: 45%;
+      }
+      @include respond(tab-port) {
+        width: 90%;
+      }
+      @include respond(mobile) {
+        width: 100%;
+      }
+      p {
+        font-size: 20px;
+        color: #585e63;
+        line-height: 30px;
+        @include respond(desktop) {
+          font-size: 17px;
+        }
+        @include respond(tab-land) {
+          font-size: 15px;
+          line-height: 25px;
+        }
+      }
+    }
+    img {
+      width: 30%;
+      object-fit: cover;
+      height: 400px;
+      border-radius: 100px;
+      @include respond(desktop) {
+        width: 40%;
+      }
+      @include respond(tab-land) {
+        width: 50%;
+      }
+      @include respond(tab-port) {
+        width: 90%;
+        margin-top: 30px;
+      }
+      @include respond(mobile) {
+        width: 100%;
+      }
+    }
+  }
+  .education-expertise {
+    margin: 150px auto;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    @include respond(desktop) {
+      width: 100%;
+    }
+    @include respond(tab-port) {
+      margin: 120px auto;
+    }
+    @include respond(mobile) {
+      flex-direction: column;
+    }
+    h4 {
+      margin-bottom: 10px;
+      font-size: 20px;
+      @include respond(tab-port) {
+        font-size: 17px;
+      }
+    }
+    div {
+      &:first-child {
+        @include respond(tab-land) {
+          width: 55%;
+        }
+        @include respond(mobile) {
+          width: 100%;
+          margin-bottom: 20px;
+        }
+      }
+    }
+    li {
+      font-size: 16px;
+      margin-bottom: 10px;
+      display: flex;
+      @include respond(tab-port) {
+        font-size: 14px;
+      }
+      img {
+        width: 10px;
+        margin-right: 5px;
+      }
+      a {
+        font-size: 13px;
+        color: $color-primary;
+        text-decoration: underline;
+        margin-left: 5px;
+      }
+    }
+  }
+  .get-in-touch {
+    text-align: center;
+    margin-top: 100px;
+    h3 {
+      margin-bottom: 10px;
+    }
+    p {
+      @include respond(tab-port) {
+        font-size: 14px;
+      }
+    }
+    a {
+      @include btnStyle;
+      border-radius: 5px;
+      font-size: 13px;
+      display: inline-block;
+      margin-top: 30px;
+    }
+  }
+}
+
+// side menu
+.side-menu {
+  width: 100%;
+  height: 100%;
+  background: rgb(248, 248, 248);
+  position: fixed;
+  top: 0;
+  right: -900px;
+  transition: right 0.3s ease-in-out;
+
+  place-items: center;
+  display: none;
+  z-index: 9999;
+  @include respond(tab-port) {
+    display: grid;
+  }
+  button {
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    margin-top: 0;
+    background: none;
+    border: none;
+    img {
+      width: 35px;
+    }
+  }
+  ul {
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    li {
+      text-transform: uppercase;
+    }
+  }
+}
+
+.omega {
+  width: 100%;
+  background: url(../images/omegahead.png);
+  background-position: -120px;
+  background-repeat: no-repeat;
+  padding-top: 200px;
+  padding-bottom: 100px;
+  text-align: center;
+  @include respond(tab-land) {
+    padding-top: 150px;
+    padding-bottom: 50px;
+  }
+
+  h1 {
+    font-size: 56px;
+    color: $color-primary;
+    @include respond(tab-land) {
+      font-size: 40px;
+    }
+  }
+}
+.omega-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin: 60px auto 0;
+  color: $color-primary;
+  @include respond(desktop) {
+    width: 90%;
+  }
+  @include respond(tab-land) {
+    display: block;
+  }
+  p {
+    font-size: 18px;
+    @include respond(desktop) {
+      font-size: 16px;
+    }
+    @include respond(tab-land) {
+      margin-top: 30px;
+    }
+    span {
+      font-weight: 700;
+      color: $color-primary;
+    }
+  }
+  a button {
+    all: unset;
+    padding: 17px 30px;
+    border: 1px solid $color-primary;
+    color: $color-primary;
+    cursor: pointer;
+    font-weight: 800;
+    transition: all 0.2s ease-in-out;
+    text-align: center;
+    &:hover {
+      background-color: $color-primary;
+      color: #fff;
+    }
+    @include respond(desktop) {
+      font-size: 15px;
+    }
+    @include respond(tab-land) {
+      margin-top: 30px;
+    }
+  }
+}
+
+.omega-images {
+  width: 80%;
+  margin: 80px auto;
+  padding-bottom: 40px;
+  @include respond(desktop) {
+    width: 90%;
+  }
+  h1 {
+    margin-bottom: 30px;
+  }
+  &-container {
+    width: 40%;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+
+    overflow: hidden;
+    @include respond(tab-land) {
+      height: 250px;
+    }
+    img {
+      width: 90%;
+      height: 100%;
+      border-radius: 10px;
+      @include respond(desktop) {
+        // width: 95%;
+      }
+    }
+  }
+}
+
+.slick-arrow {
+  display: none !important;
+}
+
+.innovation {
+  width: 100%;
+  background: url(../images/landing.png);
+  background-repeat: no-repeat;
+  padding-top: 200px;
+  padding-bottom: 100px;
+  text-align: center;
+  @include respond(tab-land) {
+    padding-top: 150px;
+    padding-bottom: 50px;
+  }
+
+  h1 {
+    font-size: 56px;
+    @include respond(tab-land) {
+      font-size: 40px;
+    }
+    @include respond(tab-port) {
+      font-size: 30px;
+      padding: 0 20px;
+    }
+  }
+
+  &-image{
+      width: 50%;
+      margin: 0 auto;
+      @include respond(tab-port){
+          width: 80%;
+      }
+      img{
+          width: 100%;
+      }
+  }
+}
+.innovation-image-container{
+    width: 80%;
+    margin: 80px auto;
+    padding-bottom: 40px;
+    @include respond(desktop) {
+      width: 90%;
+    }
+    h1 {
+        margin-bottom: 30px;
+        text-align: center;
+      }
+  }

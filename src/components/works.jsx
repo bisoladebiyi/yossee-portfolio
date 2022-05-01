@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import work1 from "../images/work1.png";
-import work2 from "../images/work2.png";
-import work3 from "../images/work3.png";
+import work1 from "../images/omega.png";
+import work2 from "../images/landing.png";
+
 
 const Works = () => {
   let currentSlide = 0;
@@ -19,13 +19,6 @@ const Works = () => {
     const slidePosition = nextSlide * slides[0].clientWidth;
     slider.scrollTo(slidePosition, 0);
     currentSlide = nextSlide;
-  };
-  const radioSlide = (index) => {
-    const radios = [...document.querySelectorAll(".radio-btn")];
-
-    radios[currentSlide].classList.remove("active");
-    radios[index].classList.add("active");
-    moveSlide(index);
   };
   const showNext = () => {
     const slides = [...document.querySelectorAll(".slides")];
@@ -46,18 +39,13 @@ const Works = () => {
       <h3>WORKS</h3>
       <div className="grid-container">
       <div className="work-grid">
-        <figure className="slides fig-1">
+        <Link to="/omega-bakery"><figure className="slides fig-1">
           <img src={work1} alt="" />
-        </figure>
-        <figure className="slides">
+        </figure></Link>
+        
+        <Link to="/innovation-landing"><figure className="slides">
           <img src={work2} alt="" />
-        </figure>
-        <figure className="slides">
-          <img src={work2} alt="" />
-        </figure>
-        <figure className="slides">
-          <img src={work3} alt="" />
-        </figure>
+        </figure></Link>
         <div className="slides see-more-slide ">
           <Link to="/my-works">
             <div className="see-more">
@@ -113,84 +101,3 @@ const Works = () => {
 };
 
 export default Works;
-
-/* <button onClick={() => radioSlide(0)} className="radio-btn active">
-          <svg
-            viewBox="0 0 16 16"
-            xmlns="http://www.w3.org/2000/svg"
-            enable-background="new 0 0 16 16"
-          >
-            <circle
-              id="first"
-              cx="8"
-              cy="8"
-              r="8"
-              fill="#6798a3"
-              class="fill-000000"
-            ></circle>
-          </svg>
-        </button>
-        <button onClick={() => radioSlide(1)} className="radio-btn">
-          <svg
-            viewBox="0 0 16 16"
-            xmlns="http://www.w3.org/2000/svg"
-            enable-background="new 0 0 16 16"
-          >
-            <circle
-              id="second"
-              cx="8"
-              cy="8"
-              r="8"
-              fill="#6798a3"
-              class="fill-000000"
-            ></circle>
-          </svg>
-        </button>
-        <button onClick={() => radioSlide(2)} className="radio-btn">
-          <svg
-            viewBox="0 0 16 16"
-            xmlns="http://www.w3.org/2000/svg"
-            enable-background="new 0 0 16 16"
-          >
-            <circle
-              id="third"
-              cx="8"
-              cy="8"
-              r="8"
-              fill="#6798a3"
-              class="fill-000000"
-            ></circle>
-          </svg>
-        </button>
-        <button onClick={() => radioSlide(3)} className="radio-btn">
-          <svg
-            viewBox="0 0 16 16"
-            xmlns="http://www.w3.org/2000/svg"
-            enable-background="new 0 0 16 16"
-          >
-            <circle
-              id="fourth"
-              cx="8"
-              cy="8"
-              r="8"
-              fill="#6798a3"
-              class="fill-000000"
-            ></circle>
-          </svg>
-        </button>
-        <button onClick={() => radioSlide(4)} className="radio-btn">
-          <svg
-            viewBox="0 0 16 16"
-            xmlns="http://www.w3.org/2000/svg"
-            enable-background="new 0 0 16 16"
-          >
-            <circle
-              id="fifth"
-              cx="8"
-              cy="8"
-              r="8"
-              fill="#6798a3"
-              class="fill-000000"
-            ></circle>
-          </svg>
-        </button> */

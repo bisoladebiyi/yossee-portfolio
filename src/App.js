@@ -7,6 +7,8 @@ import AboutPage from './pages/about-page';
 import Home from './pages/home';
 import SideMenu from './components/side-menu';
 import smoothscroll from 'smoothscroll-polyfill';
+import OmegaBakery from './pages/omega-bakery';
+import Innovation from './pages/innovation-landing';
 
 
 function App() {
@@ -27,6 +29,8 @@ function App() {
          <Route path="/" exact element={<Home />} />
          <Route path="/my-works" element={<Works />} />
          <Route path="/about" element={<AboutPage />}/>
+         <Route path="/omega-bakery" element={<OmegaBakery />}/>
+         <Route path="/innovation-landing" element={<Innovation />}/>
          </Routes>
          <SideMenu show={showMenu} />
     </div>
