@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import work1 from "../images/omega copy.png";
-import work2 from "../images/landing.png";
+import work2 from "../images/landing (1).png";
 
 
 const Works = () => {

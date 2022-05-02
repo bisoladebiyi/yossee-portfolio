@@ -15,6 +15,11 @@ html,
   color: #1a374d;
 }
 
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 body {
   font-family: Sen;
   background: #fff;
