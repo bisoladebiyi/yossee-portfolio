@@ -11,9 +11,6 @@ const Innovation = ({ setNav }) => {
     },[])
   return (
     <div ref={ref}>
-         <div className='innovation'>
-            <h1>INNOVATION LANDING PAGE</h1> 
-        </div>
         <div className='innovation-image-container'>
             <h1>Full Preview</h1>
             <div className='innovation-image'>

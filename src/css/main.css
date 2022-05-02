@@ -956,36 +956,6 @@ button:hover {
   display: none !important;
 }
 
-.innovation {
-  width: 100%;
-  background: url(../images/landing.png);
-  background-repeat: no-repeat;
-  background-size: 100%;
-  padding-top: 150px;
-  padding-bottom: 150px;
-  text-align: center;
-}
-@media (max-width: 800px) {
-  .innovation {
-    padding-top: 100px;
-    padding-bottom: 100px;
-  }
-}
-.innovation h1 {
-  font-size: 56px;
-  color: #6798a3;
-}
-@media (max-width: 800px) {
-  .innovation h1 {
-    font-size: 40px;
-  }
-}
-@media (max-width: 600px) {
-  .innovation h1 {
-    font-size: 30px;
-    padding: 0 20px;
-  }
-}
 .innovation-image {
   width: 50%;
   margin: 0 auto;
@@ -1001,7 +971,7 @@ button:hover {
 
 .innovation-image-container {
   width: 80%;
-  margin: 80px auto;
+  margin: 50px auto;
   padding-bottom: 40px;
 }
 @media (max-width: 1030px) {

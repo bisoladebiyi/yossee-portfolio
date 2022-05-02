@@ -34,7 +34,7 @@ setNav(false)
   return (
     <div>
       <div className="omega">
-        <h1>OMEGA BAKERY</h1>
+        <h1></h1>
       </div>
       <div className="omega-details">
         <p>
