@@ -1,4 +1,4 @@
-
+import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/navbar';
 import Works from './pages/works';
@@ -11,7 +11,9 @@ import OmegaBakery from './pages/omega-bakery';
 import Innovation from './pages/innovation-landing';
 
 
+
 function App() {
+  const [ showNav, setShowNav ] = useState(true)
   const showMenu = () => {
     let menu = document.querySelector(".side-menu")
     if (menu.style.right !== "0px") {
@@ -24,13 +26,13 @@ function App() {
   return (
     <BrowserRouter>
        <div className="App">
-         <Navbar show={showMenu}/>
+        {showNav && <Navbar show={showMenu}/>}
          <Routes>
-         <Route path="/" exact element={<Home />} />
-         <Route path="/my-works" element={<Works />} />
-         <Route path="/about" element={<AboutPage />}/>
-         <Route path="/omega-bakery" element={<OmegaBakery />}/>
-         <Route path="/innovation-landing" element={<Innovation />}/>
+         <Route path="/" exact element={<Home setNav={setShowNav}  />} />
+         <Route path="/my-works" element={<Works setNav={setShowNav}  />} />
+         <Route path="/about" element={<AboutPage setNav={setShowNav}  />}/>
+         <Route path="/omega-bakery" element={<OmegaBakery setNav={setShowNav} />}/>
+         <Route path="/innovation-landing" element={<Innovation setNav={setShowNav}  />}/>
          </Routes>
          <SideMenu show={showMenu} />
     </div>

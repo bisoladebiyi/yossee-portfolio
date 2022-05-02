@@ -4,10 +4,11 @@ import Footer from '../components/footer'
 import Header from '../components/header'
 import Works from '../components/works'
 
-const Home = () => {
+const Home = ({ setNav }) => {
     const ref = useRef()
     useEffect(()=> {
-     ref.current.scrollIntoView({ behavior : "smooth"})
+        setNav(true)     
+        ref.current.scrollIntoView({ behavior : "smooth"})
     },[])
     
     return (

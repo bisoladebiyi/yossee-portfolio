@@ -22,7 +22,7 @@ html,
 body {
   font-family: Sen;
   background: #fff;
-  overflow-x: hidden;
+//   overflow: hidden;
 }
 a {
   text-decoration: none;
@@ -569,15 +569,15 @@ button {
 
 .omega {
   width: 100%;
-  background: url(../images/omegahead.png);
-  background-position: -120px;
+  background: url(../images/omegahead2.png);
   background-repeat: no-repeat;
-  padding-top: 200px;
-  padding-bottom: 100px;
+  background-size: 110%;
+  padding-top: 150px;
+  padding-bottom: 150px;
   text-align: center;
   @include respond(tab-land) {
-    padding-top: 150px;
-    padding-bottom: 50px;
+    padding-top: 100px;
+    padding-bottom: 100px;
   }
 
   h1 {
@@ -676,16 +676,18 @@ button {
   width: 100%;
   background: url(../images/landing.png);
   background-repeat: no-repeat;
-  padding-top: 200px;
-  padding-bottom: 100px;
+  background-size: 100%;
+  padding-top: 150px;
+  padding-bottom: 150px;
   text-align: center;
   @include respond(tab-land) {
-    padding-top: 150px;
-    padding-bottom: 50px;
+    padding-top: 100px;
+    padding-bottom: 100px;
   }
 
   h1 {
     font-size: 56px;
+    color: $color-primary;
     @include respond(tab-land) {
       font-size: 40px;
     }
@@ -717,4 +719,30 @@ button {
         margin-bottom: 30px;
         text-align: center;
       }
+  }
+
+
+  .back-to-home{
+    display: flex;
+    align-items: center;
+    margin-top: 60px;
+    &-button{
+      all: unset;
+      cursor: pointer;
+      img{
+        width: 45px;
+        transition: all .3s ease-in-out;
+        &:hover{
+          margin-left: -10px;
+        }
+      }
+      &:hover{
+        all: unset;
+        cursor: pointer;
+      }
+    }
+      &-text{
+        margin-left: 10px;
+      }
+
   }

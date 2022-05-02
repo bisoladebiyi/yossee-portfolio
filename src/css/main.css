@@ -18,7 +18,6 @@ html,
 body {
   font-family: Sen;
   background: #fff;
-  overflow-x: hidden;
 }
 
 a {
@@ -254,9 +253,9 @@ button:hover {
   grid-template-columns: 1fr 1fr;
   grid-gap: 60px;
 }
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .works .work-grid {
-    display: block;
+    grid-template-columns: 1fr;
   }
 }
 .works .work-grid figure {
@@ -268,6 +267,11 @@ button:hover {
   cursor: pointer;
   margin-left: 0;
   transition: 1s;
+}
+@media (max-width: 800px) {
+  .works .work-grid figure {
+    height: auto;
+  }
 }
 .works .work-grid figure::after {
   content: "";
@@ -287,7 +291,6 @@ button:hover {
 }
 .works .work-grid figure img {
   width: 100%;
-  object-fit: cover;
   height: 100%;
 }
 .works .work-grid figure:hover {
@@ -539,9 +542,9 @@ button:hover {
   grid-template-columns: 1fr 1fr;
   grid-gap: 60px;
 }
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .work-page .work-grid {
-    display: block;
+    grid-template-columns: 1fr;
   }
 }
 .work-page .work-grid figure {
@@ -553,6 +556,11 @@ button:hover {
   cursor: pointer;
   margin-left: 0;
   transition: 1s;
+}
+@media (max-width: 800px) {
+  .work-page .work-grid figure {
+    height: auto;
+  }
 }
 .work-page .work-grid figure::after {
   content: "";
@@ -572,7 +580,6 @@ button:hover {
 }
 .work-page .work-grid figure img {
   width: 100%;
-  object-fit: cover;
   height: 100%;
 }
 .work-page .work-grid figure:hover {
@@ -826,17 +833,17 @@ button:hover {
 
 .omega {
   width: 100%;
-  background: url(../images/omegahead.png);
-  background-position: -120px;
+  background: url(../images/omegahead2.png);
   background-repeat: no-repeat;
-  padding-top: 200px;
-  padding-bottom: 100px;
+  background-size: 110%;
+  padding-top: 150px;
+  padding-bottom: 150px;
   text-align: center;
 }
 @media (max-width: 800px) {
   .omega {
-    padding-top: 150px;
-    padding-bottom: 50px;
+    padding-top: 100px;
+    padding-bottom: 100px;
   }
 }
 .omega h1 {
@@ -948,18 +955,20 @@ button:hover {
   width: 100%;
   background: url(../images/landing.png);
   background-repeat: no-repeat;
-  padding-top: 200px;
-  padding-bottom: 100px;
+  background-size: 100%;
+  padding-top: 150px;
+  padding-bottom: 150px;
   text-align: center;
 }
 @media (max-width: 800px) {
   .innovation {
-    padding-top: 150px;
-    padding-bottom: 50px;
+    padding-top: 100px;
+    padding-bottom: 100px;
   }
 }
 .innovation h1 {
   font-size: 56px;
+  color: #6798a3;
 }
 @media (max-width: 800px) {
   .innovation h1 {
@@ -998,6 +1007,30 @@ button:hover {
 .innovation-image-container h1 {
   margin-bottom: 30px;
   text-align: center;
+}
+
+.back-to-home {
+  display: flex;
+  align-items: center;
+  margin-top: 60px;
+}
+.back-to-home-button {
+  all: unset;
+  cursor: pointer;
+}
+.back-to-home-button img {
+  width: 45px;
+  transition: all 0.3s ease-in-out;
+}
+.back-to-home-button img:hover {
+  margin-left: -10px;
+}
+.back-to-home-button:hover {
+  all: unset;
+  cursor: pointer;
+}
+.back-to-home-text {
+  margin-left: 10px;
 }
 
 /*# sourceMappingURL=main.css.map */

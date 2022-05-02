@@ -1,12 +1,13 @@
 import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import Footer from "../components/footer";
-import work1 from "../images/omega.png";
-import work2 from "../images/landing.png";
+import work1 from "../images/omega copy.png";
+import work2 from "../images/landing copy.png";
 
-const Works = () => {
+const Works = ({ setNav }) => {
   const ref = useRef()
   useEffect(()=> {
+    setNav(true)
    ref.current.scrollIntoView({ behavior : "smooth"})
   },[])
   return (
